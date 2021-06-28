@@ -1,0 +1,29 @@
+
+.header {
+    &__imagen {
+        background: url(../img/imagen1.png);
+        height: 40vh;
+        width: 100%;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+
+//Tablet size
+
+    @include respond-to($bp-md-tablet) {
+        &__imagen {
+            height: 50vh;
+        }
+    }
+
+//Desktop size
+    @include respond-to($bp-xl-desktop) {
+        &__imagen {
+            height: 90vh;
+        }
+    }
+}

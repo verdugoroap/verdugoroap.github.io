@@ -1,0 +1,155 @@
+//Mobile size
+
+.navbar {
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    &__logo {
+        height: 100%;
+        width: 70px;
+        display: inline-block;
+        background-color: $smoky-black;
+    }
+    &__logoNombre {
+        margin: 0 auto;
+        font-family: $secondary-font;
+        font-size: $x-large-font;
+        color: $white;
+        text-align: center;
+        padding-top: 20px;
+    }
+    &__menu {
+        display: none;
+    }
+    &__menuBurger {
+        padding: 20px 20px;
+    }
+    &__input {
+        display: none;
+        z-index: 2;
+        position: absolute;
+        top: 10px;
+        right: 16px;
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+    &__burger {
+        display: block;
+        width: 28px;
+        height: 3px;
+        position: relative;
+        background-color: #000000;
+        z-index: 1;
+        -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+        transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+    }
+    .burger1 {
+        -webkit-transform-origin: 10% 0%;
+        transform-origin: 10% 0%;
+        margin-bottom: 5px;
+    }
+    .burger2 {
+        margin-bottom: 5px;
+    }
+    .burger3 {
+        -webkit-transform-origin: 10% 100%;
+        transform-origin: 10% 100%;
+    }
+    &__input:checked~ul {
+        width: 100%;
+        -webkit-transition: width 0.3s ease-out;
+        transition: width 0.3s ease-out;
+    }
+    &__input:checked~label .burger1 {
+        opacity: 1;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        background-color: #000000;
+    }
+    &__input:checked~label .burger2 {
+        opacity: 0;
+    }
+    &__input:checked~label .burger3 {
+        opacity: 1;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        background-color: #000000;
+    }
+
+
+//Tablet size
+
+    @include respond-to($bp-md-tablet) {
+        .navbar {
+            height: 100%;
+            width: 70px;
+        }
+        .navbar__logo {
+            display: inline-block;
+            width: 100px;
+        }
+        .navbar__logoNombre {
+            font-size: $xx-large-font;
+            padding-top: 23px;
+        }
+        .navbar__menuBurger {
+            display: inline-block;
+        }
+        .navbar__menu {
+            display: inline-block;
+            height: 200px;
+        }
+        .navbar__menu:last-child {
+            margin-right: 15px;
+        }
+        .navbar__menuItem {
+            color: $smoky-black;
+            font-family: $primary-font;
+            font-weight: $primary-font-bold;
+            font-family: $large-font;
+            margin-top: 25px;
+            display: inline-block;
+            padding: 0 27px;
+        }
+        .navbar__menuBurger {
+            display: none;
+        }
+    }
+    
+    
+//Desktop size
+
+    @include respond-to($bp-xl-desktop) {
+        .navbar {
+            height: 100%;
+            width: 120px;
+        }
+        .navbar__logo {
+            display: inline-block;
+            width: 120px;
+        }
+        .navbar__logoNombre {
+            padding-top: 30px;
+            font-size: $xx-large-font;
+        }
+        .navbar__menuBurger {
+            display: inline-block;
+        }
+        .navbar__menu {
+            padding: 12px 0;
+        }
+        .navbar__menu:last-child {
+            margin-right: 40px;
+        }
+        .navbar__menuItem {
+            padding: 0 40px;
+            font-size: $large-font;
+        }
+        .navbar__menuBurger {
+            display: none;
+        }
+    }
+}

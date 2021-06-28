@@ -1,0 +1,55 @@
+.article {
+    z-index: 20;
+    background-color: $white;
+    &__container {
+        padding: 20px 30px;
+    }
+    &__title {
+        font-family: $secondary-font;
+        font-size: $xx-large-font;
+        text-transform: uppercase;
+        line-height: 1.5;
+    }
+    &__paragraph {
+        line-height: 1.5;
+        font-family: $primary-font;
+        color: $quick-silver;
+        font-size: $medium-font;
+    }
+    &__paragraphNone {
+        display: none;
+    }
+    //Tablet size
+
+    @include respond-to($bp-md-tablet) {
+        &__container {
+            padding: 20px 70px;
+        }
+        &__title {
+            font-size: $xxx-large-font;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+        &__titleCut {
+            display: block;
+        }
+        &__paragraph {
+            margin-top: 10px;
+            width: 80%
+        }
+        &__paragraphNone {
+            display: inline;
+        }
+    }
+    //Desktop size
+    @include respond-to($bp-xl-desktop) {
+        &__container {
+            padding: 70px;
+        }
+        &__paragraph {
+            line-height: 2;
+            margin: 20px 0;
+            width: 60%
+        }
+    }
+}
